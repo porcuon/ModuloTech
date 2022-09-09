@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Modulotech</string>
+
+    <string name="common_save">Save</string>
+    <string name="common_mode">Mode</string>
+    <string name="common_intensity">Intensity</string>
+    <string name="common_temperature">Temperature</string>
+    <string name="common_position">Position</string>
+
+    <string name="item_device_light">Light</string>
+    <string name="item_device_heater">Heater</string>
+    <string name="item_device_roller_shutter">Roller Shutter</string>
+
+    <string name="layout_server_error_title">Failed to load the data from a server</string>
+    <string name="layout_server_error_retry">Retry</string>
+
+    <string name="fragment_devices_toolbar_title">Devices</string>
+    <string name="fragment_devices_toolbar_filter">Filter</string>
+</resources>
