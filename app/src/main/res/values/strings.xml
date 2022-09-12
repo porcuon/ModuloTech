@@ -34,6 +34,5 @@
     <string name="fragment_profile_edit_street_code">Street code</string>
     <string name="fragment_profile_edit_postal_code">Postal code</string>
     <string name="fragment_profile_edit_error_empty_text">The field cannot be empty</string>
-    <string name="fragment_profile_edit_error_char_length">The field must contain at least %1$d characters</string>
-    <string name="fragment_profile_edit_error_format">The field must be in %1sd format</string>
+    <string name="fragment_profile_edit_error_date_format">The field must be in %1s format</string>
 </resources>

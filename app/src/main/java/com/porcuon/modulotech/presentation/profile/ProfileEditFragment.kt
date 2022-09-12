@@ -2,7 +2,9 @@ package com.porcuon.modulotech.presentation.profile
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.children
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.textfield.TextInputLayout
 import com.porcuon.modulotech.R
 import com.porcuon.modulotech.data.mapper.NO_POSTAL_CODE
 import com.porcuon.modulotech.presentation.core.BaseFragment
@@ -17,6 +19,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Date
 
 private const val DATE_FORMAT = "dd/mm/yyyy"
+private const val DATE_FORMAT_REGEX = "^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$"
 
 class ProfileEditFragment : BaseFragment<FragmentProfileEditBinding>(FragmentProfileEditBinding::inflate) {
 
@@ -70,7 +73,41 @@ class ProfileEditFragment : BaseFragment<FragmentProfileEditBinding>(FragmentPro
     }
 
     private fun validateFields() {
+        var isValidationFailed = false
 
+        binding?.editTextContainer?.children?.forEach { child ->
+            if (child !is TextInputLayout) return@forEach
+
+            val text: String = child.editText?.text.toStringOrEmpty()
+            val errorText: String? = when (child == binding?.dateOfBirthTextInputLayout) {
+                true -> validateDateOfBirthFormat(text)
+                else -> validateEmptyField(text)
+            }
+
+            child.error = errorText
+            child.isErrorEnabled = child.error != null
+            isValidationFailed = isValidationFailed || child.isErrorEnabled
+        }
+
+        if (!isValidationFailed) {
+            updateUser()
+        }
+    }
+
+    private fun validateEmptyField(text: String): String? {
+        return when (text.isBlank()) {
+            true -> getString(R.string.fragment_profile_edit_error_empty_text)
+            else -> null
+        }
+    }
+
+    private fun validateDateOfBirthFormat(text: String): String? {
+        val regex = Regex(DATE_FORMAT_REGEX)
+
+        return when (!regex.matches(text)) {
+            true -> getString(R.string.fragment_profile_edit_error_date_format, DATE_FORMAT)
+            else -> null
+        }
     }
 
     private fun updateUser() {
