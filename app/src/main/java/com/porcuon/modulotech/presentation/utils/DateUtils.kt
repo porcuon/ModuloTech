@@ -8,7 +8,7 @@ fun Date.format(pattern: String): String {
     return dateFormatter.format(this)
 }
 
-fun getDateFromFormattedDate(text: String, pattern: String): Date {
+fun getDateFromString(text: String, pattern: String): Date {
     val dateFormatter = SimpleDateFormat(pattern)
     return dateFormatter.parse(text) ?: Date()
 }

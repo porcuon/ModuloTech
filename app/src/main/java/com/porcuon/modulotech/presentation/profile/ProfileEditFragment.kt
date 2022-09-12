@@ -12,7 +12,7 @@ import com.porcuon.modulotech.databinding.FragmentProfileEditBinding
 import com.porcuon.modulotech.domain.model.Address
 import com.porcuon.modulotech.domain.model.User
 import com.porcuon.modulotech.presentation.utils.format
-import com.porcuon.modulotech.presentation.utils.getDateFromFormattedDate
+import com.porcuon.modulotech.presentation.utils.getDateFromString
 import com.porcuon.modulotech.presentation.utils.toStringOrEmpty
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -111,7 +111,7 @@ class ProfileEditFragment : BaseFragment<FragmentProfileEditBinding>(FragmentPro
     }
 
     private fun updateUser() {
-        val dateOfBirth: Date = getDateFromFormattedDate(
+        val dateOfBirth: Date = getDateFromString(
             text = binding?.dateOfBirthEditText?.text.toStringOrEmpty(),
             pattern = DATE_FORMAT
         )
