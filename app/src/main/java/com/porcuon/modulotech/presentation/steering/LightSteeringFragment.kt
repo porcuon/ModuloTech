@@ -17,6 +17,7 @@ class LightSteeringFragment : BaseDeviceSteeringFragment<FragmentLightSteeringBi
     }
 
     private fun setupViews() {
+        binding?.lightNameTextView?.text = device.name
         binding?.modeSwitch?.isChecked = device.deviceMode == DeviceMode.ON
 
         binding?.intensitySlider?.apply {

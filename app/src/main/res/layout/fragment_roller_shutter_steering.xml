@@ -3,8 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingHorizontal="@dimen/padding_16dp"
     android:paddingVertical="@dimen/padding_12dp">
+
+    <TextView
+        android:id="@+id/roller_shutter_name_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Volet roulant - Cuisine" />
 
     <TextView
         android:id="@+id/position_text_view"
@@ -21,9 +34,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16dp"
         android:stepSize="1"
+        android:layout_marginTop="@dimen/margin_16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/position_text_view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/roller_shutter_name_text_view"
+        app:tickVisible="false" />
 
     <Button
         android:id="@+id/save_button"

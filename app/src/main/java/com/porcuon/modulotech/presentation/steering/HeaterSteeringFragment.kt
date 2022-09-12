@@ -20,6 +20,8 @@ class HeaterSteeringFragment :
     }
 
     private fun setupViews() {
+        binding?.heaterNameTextView?.text = device.name
+
         binding?.modeSwitch?.isChecked = device.deviceMode == DeviceMode.ON
         binding?.temperatureValueTextView?.text = device.temperature.toString()
 

@@ -19,6 +19,8 @@ class RollerShutterSteeringFragment :
     }
 
     private fun setupViews() {
+        binding?.rollerShutterNameTextView?.text = device.name
+
         binding?.positionSlider?.apply {
             value = device.position.toFloat()
             valueFrom = RollerShutter.MIN_POSITION.toFloat()
