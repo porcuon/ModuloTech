@@ -1,85 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="@dimen/padding_16dp"
     android:paddingVertical="@dimen/padding_12dp">
 
     <TextView
-        android:id="@+id/title_text_view"
+        android:id="@+id/position_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/common_position"
+        app:layout_constraintBottom_toBottomOf="@id/position_slider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/position_slider" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/position_slider"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:stepSize="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Volet roulant - Salon" />
-
-    <TextView
-        android:id="@+id/mode_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8dp"
-        android:text="@string/common_mode"
-        app:layout_constraintBottom_toBottomOf="@id/mode_switch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/mode_switch" />
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/mode_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_text_view" />
-
-    <TextView
-        android:id="@+id/temperature_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/common_temperature"
-        app:layout_constraintBottom_toBottomOf="@id/remove_temperature_image_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/remove_temperature_image_view" />
-
-    <ImageView
-        android:id="@+id/remove_temperature_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8dp"
-        android:layout_marginEnd="@dimen/margin_4dp"
-        android:padding="@dimen/padding_4dp"
-        android:src="@drawable/ic_circle_remove"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/temperature_value_text_view"
-        app:layout_constraintTop_toBottomOf="@id/mode_switch" />
-
-    <TextView
-        android:id="@+id/temperature_value_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_4dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/add_temperature_image_view"
-        app:layout_constraintEnd_toStartOf="@id/add_temperature_image_view"
-        app:layout_constraintTop_toTopOf="@id/add_temperature_image_view"
-        tools:text="25.5" />
-
-    <ImageView
-        android:id="@+id/add_temperature_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8dp"
-        android:padding="@dimen/padding_4dp"
-        android:src="@drawable/ic_circle_plus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mode_switch" />
+        app:layout_constraintStart_toEndOf="@id/position_text_view"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/save_button"
@@ -89,6 +33,6 @@
         android:text="@string/common_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/temperature_text_view" />
+        app:layout_constraintTop_toBottomOf="@id/position_slider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

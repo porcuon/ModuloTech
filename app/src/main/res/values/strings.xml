@@ -16,4 +16,24 @@
 
     <string name="fragment_devices_toolbar_title">Devices</string>
     <string name="fragment_devices_toolbar_filter">Filter</string>
+
+    <string name="fragment_profile_toolbar_title">Profile</string>
+    <string name="fragment_profile_name">Name</string>
+    <string name="fragment_profile_date_of_birth">Date of birth</string>
+    <string name="fragment_profile_country">Country</string>
+    <string name="fragment_profile_city">City</string>
+    <string name="fragment_profile_address">Address</string>
+    
+    <string name="fragment_profile_edit_title">Edit profile</string>
+    <string name="fragment_profile_edit_first_name">First name</string>
+    <string name="fragment_profile_edit_last_name">Last name</string>
+    <string name="fragment_profile_edit_date_of_birth">Date of birth</string>
+    <string name="fragment_profile_edit_country">Country</string>
+    <string name="fragment_profile_edit_city">City</string>
+    <string name="fragment_profile_edit_street">Street</string>
+    <string name="fragment_profile_edit_street_code">Street code</string>
+    <string name="fragment_profile_edit_postal_code">Postal code</string>
+    <string name="fragment_profile_edit_error_empty_text">The field cannot be empty</string>
+    <string name="fragment_profile_edit_error_char_length">The field must contain at least %1$d characters</string>
+    <string name="fragment_profile_edit_error_format">The field must be in %1sd format</string>
 </resources>

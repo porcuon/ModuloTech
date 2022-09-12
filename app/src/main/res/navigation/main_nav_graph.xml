@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/devicesFragment">
+
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="com.porcuon.modulotech.presentation.devicelist.DevicesFragment"
+        android:label="DevicesFragment"
+        tools:layout="@layout/fragment_devices">
+        <action
+            android:id="@+id/action_devicesFragment_to_deviceFiltersFragment"
+            app:destination="@id/deviceFiltersFragment" />
+        <action
+            android:id="@+id/action_devicesFragment_to_lightSteeringFragment"
+            app:destination="@id/lightSteeringFragment"/>
+        <action
+            android:id="@+id/action_devicesFragment_to_heaterSteeringFragment"
+            app:destination="@id/heaterSteeringFragment" />
+        <action
+            android:id="@+id/action_devicesFragment_to_rollerShutterSteeringFragment"
+            app:destination="@id/rollerShutterSteeringFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.porcuon.modulotech.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/lightSteeringFragment"
+        android:name="com.porcuon.modulotech.presentation.steering.LightSteeringFragment"
+        android:label="LightSteeringFragment"
+        tools:layout="@layout/fragment_light_steering">
+        <argument
+            android:name="light"
+            app:argType="com.porcuon.modulotech.domain.model.Light" />
+    </dialog>
+    <dialog
+        android:id="@+id/heaterSteeringFragment"
+        android:name="com.porcuon.modulotech.presentation.steering.HeaterSteeringFragment"
+        android:label="HeaterSteeringFragment"
+        tools:layout="@layout/fragment_heater_steering">
+        <argument
+            android:name="heater"
+            app:argType="com.porcuon.modulotech.domain.model.Heater" />
+    </dialog>
+    <dialog
+        android:id="@+id/rollerShutterSteeringFragment"
+        android:name="com.porcuon.modulotech.presentation.steering.RollerShutterSteeringFragment"
+        android:label="RollerShutterSteeringFragment"
+        tools:layout="@layout/fragment_roller_shutter_steering">
+        <argument
+            android:name="rollerShutter"
+            app:argType="com.porcuon.modulotech.domain.model.RollerShutter" />
+    </dialog>
+    <dialog
+        android:id="@+id/deviceFiltersFragment"
+        android:name="com.porcuon.modulotech.presentation.filters.DeviceFiltersFragment"
+        android:label="DeviceFiltersFragment"
+        tools:layout="@layout/fragment_device_filters" />
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.porcuon.modulotech.presentation.profile.ProfileEditFragment"
+        android:label="ProfileEditFragment"
+        tools:layout="@layout/fragment_profile_edit" >
+        <argument
+            android:name="user"
+            app:argType="com.porcuon.modulotech.domain.model.User" />
+    </fragment>
+</navigation>
