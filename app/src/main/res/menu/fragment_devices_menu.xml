@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action_filter"
         android:icon="@drawable/ic_filter"
-        android:title="@string/fragment_devices_toolbar_filter"
+        android:title="@string/fragment_devices_menu_action_filter"
         app:showAsAction="ifRoom" />
 </menu>

@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action_submit"
         android:icon="@drawable/ic_check"
-        android:title="Submit"
+        android:title="@string/fragment_edit_profile_action_submit"
         app:showAsAction="ifRoom" />
 </menu>

@@ -1,4 +1,4 @@
-package com.porcuon.modulotech.presentation.profile
+package com.porcuon.modulotech.presentation.profileedit
 
 import android.os.Bundle
 import android.view.View
@@ -11,6 +11,7 @@ import com.porcuon.modulotech.presentation.core.BaseFragment
 import com.porcuon.modulotech.databinding.FragmentProfileEditBinding
 import com.porcuon.modulotech.domain.model.Address
 import com.porcuon.modulotech.domain.model.User
+import com.porcuon.modulotech.presentation.profile.ProfileViewModel
 import com.porcuon.modulotech.presentation.utils.format
 import com.porcuon.modulotech.presentation.utils.getDateFromString
 import com.porcuon.modulotech.presentation.utils.toStringOrEmpty

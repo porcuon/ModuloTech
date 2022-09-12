@@ -11,7 +11,7 @@
         android:id="@+id/light_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/mode_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/common_mode"
+        android:text="@string/fragment_light_steering_mode"
         app:layout_constraintBottom_toBottomOf="@id/mode_switch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/mode_switch" />
@@ -39,7 +39,7 @@
         android:id="@+id/intensity_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/common_intensity"
+        android:text="@string/fragment_light_steering_intensity"
         app:layout_constraintBottom_toBottomOf="@id/intensity_slider"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/intensity_slider" />
@@ -60,7 +60,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
-        android:text="@string/common_save"
+        android:text="@string/fragment_light_steering_save"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/intensity_slider" />

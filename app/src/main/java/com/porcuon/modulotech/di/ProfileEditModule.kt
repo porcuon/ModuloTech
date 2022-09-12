@@ -1,6 +1,6 @@
 package com.porcuon.modulotech.di
 
-import com.porcuon.modulotech.presentation.profile.ProfileEditViewModel
+import com.porcuon.modulotech.presentation.profileedit.ProfileEditViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module

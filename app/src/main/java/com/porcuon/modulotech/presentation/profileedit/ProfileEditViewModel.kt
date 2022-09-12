@@ -1,4 +1,4 @@
-package com.porcuon.modulotech.presentation.profile
+package com.porcuon.modulotech.presentation.profileedit
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

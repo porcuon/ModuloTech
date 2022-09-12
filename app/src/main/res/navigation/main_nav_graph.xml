@@ -67,7 +67,7 @@
         tools:layout="@layout/fragment_device_filters" />
     <fragment
         android:id="@+id/profileEditFragment"
-        android:name="com.porcuon.modulotech.presentation.profile.ProfileEditFragment"
+        android:name="com.porcuon.modulotech.presentation.profileedit.ProfileEditFragment"
         android:label="ProfileEditFragment"
         tools:layout="@layout/fragment_profile_edit" >
         <argument

@@ -11,7 +11,7 @@
         android:id="@+id/roller_shutter_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/position_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/common_position"
+        android:text="@string/fragment_roller_shutter_position"
         app:layout_constraintBottom_toBottomOf="@id/position_slider"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/position_slider" />
@@ -40,12 +40,14 @@
         app:layout_constraintTop_toBottomOf="@id/roller_shutter_name_text_view"
         app:tickVisible="false" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
-        android:text="@string/common_save"
+        android:text="@string/fragment_roller_shutter_save"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/position_slider" />

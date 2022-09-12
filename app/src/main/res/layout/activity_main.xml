@@ -19,6 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/activity_main_bottom_nav_menu" />
+        app:menu="@menu/activity_main_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

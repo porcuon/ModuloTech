@@ -13,8 +13,8 @@
         android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/fragment_profile_menu"
-        app:title="Profile"
-        app:titleTextColor="?attr/colorOnPrimary" />
+        app:title="@string/fragment_profile_title"
+        app:titleTextColor="@color/white" />
 
     <TextView
         android:id="@+id/name_text_view"
@@ -23,7 +23,7 @@
         android:layout_marginHorizontal="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="@string/fragment_profile_name"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
         android:layout_marginHorizontal="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="@string/fragment_profile_date_of_birth"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_16dp"
-        tools:text="John Doe" />
+        tools:text="27.09.1992" />
 
     <TextView
         android:id="@+id/country_text_view"
@@ -59,7 +59,7 @@
         android:layout_marginHorizontal="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="@string/fragment_profile_country"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_16dp"
-        tools:text="John Doe" />
+        tools:text="France" />
 
     <TextView
         android:id="@+id/city_text_view"
@@ -77,7 +77,7 @@
         android:layout_marginHorizontal="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="@string/fragment_profile_city"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_16dp"
-        tools:text="John Doe" />
+        tools:text="Paris" />
 
     <TextView
         android:id="@+id/address_text_view"
@@ -95,7 +95,7 @@
         android:layout_marginHorizontal="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="@string/fragment_profile_address"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -104,6 +104,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_16dp"
-        tools:text="John Doe" />
+        tools:text="st. Mehan, 2F" />
 
 </LinearLayout>

@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Modulotech</string>
+
+    <!--region fragment_devices-->
+    <string name="fragment_devices_title">Dispositifs</string>
+    <!--endregion -->
+
+    <!--region fragment_heater_steering-->
+    <string name="fragment_heater_steering_mode">Mode</string>
+    <string name="fragment_heater_steering_temperature">Température</string>
+    <string name="fragment_heater_steering_save">Sauvegarder</string>
+    <!--endregion -->
+
+    <!--region fragment_light_steering-->
+    <string name="fragment_light_steering_mode">Mode</string>
+    <string name="fragment_light_steering_intensity">Intensité</string>
+    <string name="fragment_light_steering_save">Sauvegarder</string>
+    <!--endregion -->
+
+    <!--region fragment_roller_shutter_steering-->
+    <string name="fragment_roller_shutter_position">Position</string>
+    <string name="fragment_roller_shutter_save">Sauvegarder</string>
+    <!--endregion -->
+
+    <!--region fragment_profile-->
+    <string name="fragment_profile_title">Profil</string>
+    <string name="fragment_profile_name">Nom</string>
+    <string name="fragment_profile_date_of_birth">Date de naissance</string>
+    <string name="fragment_profile_country">Pays</string>
+    <string name="fragment_profile_city">Ville</string>
+    <string name="fragment_profile_address">Adresse</string>
+    <!--endregion -->
+
+    <!--region fragment_profile_edit-->
+    <string name="fragment_profile_edit_title">Editer le profil</string>
+    <string name="fragment_profile_edit_first_name">Prénom</string>
+    <string name="fragment_profile_edit_last_name">Nom de famille</string>
+    <string name="fragment_profile_edit_date_of_birth">Date de naissance</string>
+    <string name="fragment_profile_edit_country">Pays</string>
+    <string name="fragment_profile_edit_city">Ville</string>
+    <string name="fragment_profile_edit_street">Adresse</string>
+    <string name="fragment_profile_edit_street_code">Indicatif de la rue</string>
+    <string name="fragment_profile_edit_postal_code">Code postal</string>
+    <string name="fragment_profile_edit_error_empty_text">Le champ ne peut pas être vide</string>
+    <string name="fragment_profile_edit_error_date_format">Le champ doit être au format %1s</string>
+    <!--endregion -->
+
+    <!--region item_device-->
+    <string name="item_device_light">Lumière</string>
+    <string name="item_device_heater">Chauffage</string>
+    <string name="item_device_roller_shutter">Volet roulant</string>
+    <!--endregion -->
+
+    <!--region layout_server_error-->
+    <string name="layout_server_error_title">Impossible de charger les données à partir d\'un serveur</string>
+    <string name="layout_server_error_retry">Recommencez</string>
+    <!--endregion -->
+
+    <!--region activity_main_menu-->
+    <string name="activity_main_menu_action_home">Maison</string>
+    <string name="activity_main_menu_action_profile">Profil</string>
+    <!--endregion -->
+
+    <!--region fragment_devices_menu-->
+    <string name="fragment_devices_menu_action_filter">Filtre</string>
+    <!--endregion -->
+
+    <!--region fragment_edit_profile_menu-->
+    <string name="fragment_edit_profile_action_submit">Soumettre</string>
+    <!--endregion -->
+
+    <!--region fragment_profile_menu-->
+    <string name="fragment_profile_menu_action_edit">Éditer</string>
+    <string name="fragment_profile_menu_action_settings">Réglages</string>
+    <!--endregion -->
+</resources>

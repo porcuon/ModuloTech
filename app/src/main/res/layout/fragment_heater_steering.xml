@@ -11,7 +11,7 @@
         android:id="@+id/heater_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_8dp"
-        android:text="@string/common_mode"
+        android:text="@string/fragment_heater_steering_mode"
         app:layout_constraintBottom_toBottomOf="@id/mode_switch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/mode_switch" />
@@ -40,7 +40,7 @@
         android:id="@+id/temperature_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/common_temperature"
+        android:text="@string/fragment_heater_steering_temperature"
         app:layout_constraintBottom_toBottomOf="@id/decrease_temperature_image_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/decrease_temperature_image_view" />
@@ -55,14 +55,15 @@
         android:src="@drawable/ic_circle_remove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/temperature_value_text_view"
-        app:layout_constraintTop_toBottomOf="@id/mode_switch" />
+        app:layout_constraintTop_toBottomOf="@id/mode_switch"
+        app:tint="@android:color/holo_red_dark" />
 
     <TextView
         android:id="@+id/temperature_value_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_4dp"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/increase_temperature_image_view"
@@ -78,14 +79,17 @@
         android:padding="@dimen/padding_4dp"
         android:src="@drawable/ic_circle_plus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mode_switch" />
+        app:layout_constraintTop_toBottomOf="@id/mode_switch"
+        app:tint="@android:color/holo_green_dark" />
 
     <Button
         android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
-        android:text="@string/common_save"
+        android:text="@string/fragment_heater_steering_save"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/temperature_text_view" />
