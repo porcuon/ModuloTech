@@ -106,4 +106,22 @@
         android:layout_marginHorizontal="@dimen/margin_16dp"
         tools:text="st. Mehan, 2F" />
 
+    <TextView
+        android:id="@+id/postal_code_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/fragment_profile_postal_code"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/postal_code_value_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16dp"
+        tools:text="92252" />
+
 </LinearLayout>

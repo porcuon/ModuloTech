@@ -48,6 +48,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         binding?.countryValueTextView?.text = user.address.country
         binding?.cityValueTextView?.text = user.address.city
         binding?.addressValueTextView?.text = getFormattedAddress(user.address)
+        binding?.postalCodeValueTextView?.text = user.address.postalCode.toString()
     }
 
     private fun handleNavigation(navigation: ProfileNavigation) {

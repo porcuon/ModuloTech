@@ -29,6 +29,7 @@
     <string name="fragment_profile_country">Pays</string>
     <string name="fragment_profile_city">Ville</string>
     <string name="fragment_profile_address">Adresse</string>
+    <string name="fragment_profile_postal_code">Code postal</string>
     <!--endregion -->
 
     <!--region fragment_profile_edit-->
