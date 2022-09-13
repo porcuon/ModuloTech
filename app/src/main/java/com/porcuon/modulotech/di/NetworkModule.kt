@@ -1,5 +1,6 @@
 package com.porcuon.modulotech.di
 
+import com.porcuon.modulotech.BuildConfig
 import okhttp3.OkHttpClient
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -7,8 +8,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
 import java.util.concurrent.TimeUnit
 
-// TODO получать из buildConfig
-private const val BASE_URL = "http://storage42.com/"
 private const val DEFAULT_TIMEOUT_SECONDS = 60L
 
 val networkModule: Module = module {
@@ -24,7 +23,7 @@ val networkModule: Module = module {
         val okHttpClient: OkHttpClient = get()
 
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_ENDPOINT)
             .client(okHttpClient)
             .addConverterFactory(JacksonConverterFactory.create())
             .build()
