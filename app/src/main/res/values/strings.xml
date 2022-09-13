@@ -72,6 +72,5 @@
 
     <!--region fragment_profile_menu-->
     <string name="fragment_profile_menu_action_edit">Edit</string>
-    <string name="fragment_profile_menu_action_settings">Settings</string>
     <!--endregion -->
 </resources>

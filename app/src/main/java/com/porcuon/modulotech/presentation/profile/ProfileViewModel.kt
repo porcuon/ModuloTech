@@ -33,10 +33,6 @@ class ProfileViewModel(
         profileNavigationLiveData.value = Event(ProfileNavigation.OpenProfileEdit(user))
     }
 
-    fun onSettingsButtonClicked() {
-        profileNavigationLiveData.value = Event(ProfileNavigation.OpenSettings)
-    }
-
     private fun loadUser() {
         viewModelScope.launch {
             val userResult: Result<User> = userRepository.getUser()

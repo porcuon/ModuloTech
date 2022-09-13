@@ -7,10 +7,4 @@
         android:icon="@drawable/ic_pencil"
         android:title="@string/fragment_profile_menu_action_edit"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/fragment_profile_menu_action_settings"
-        app:showAsAction="ifRoom" />
 </menu>

@@ -28,7 +28,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         binding?.toolbar?.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_edit -> viewModel.onProfileEditButtonClicked()
-                R.id.action_settings -> viewModel.onSettingsButtonClicked()
             }
 
             true
@@ -54,17 +53,12 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     private fun handleNavigation(navigation: ProfileNavigation) {
         when (navigation) {
             is ProfileNavigation.OpenProfileEdit -> openProfileEdit(navigation.user)
-            is ProfileNavigation.OpenSettings -> openSettings()
         }
     }
 
     private fun openProfileEdit(user: User) {
         val direction = ProfileFragmentDirections.actionProfileFragmentToProfileEditFragment(user)
         findNavController().navigate(direction)
-    }
-
-    private fun openSettings() {
-
     }
 
     private fun getFullUserName(firstName: String, lastName: String): String {
