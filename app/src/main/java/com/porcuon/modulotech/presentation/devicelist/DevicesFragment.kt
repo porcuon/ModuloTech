@@ -41,8 +41,8 @@ class DevicesFragment : BaseFragment<FragmentDevicesBinding>(FragmentDevicesBind
 
     private fun observeViewModel() {
         with(viewModel) {
-            getDevicesLiveData().observe(viewLifecycleOwner, deviceListAdapter::submitList)
-            getNavigationLiveData().observeEvent(viewLifecycleOwner, ::handleNavigation)
+            devicesLiveData.observe(viewLifecycleOwner, deviceListAdapter::submitList)
+            navigationLiveData.observeEvent(viewLifecycleOwner, ::handleNavigation)
         }
     }
 

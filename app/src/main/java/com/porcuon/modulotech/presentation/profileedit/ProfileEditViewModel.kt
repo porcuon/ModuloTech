@@ -13,16 +13,16 @@ class ProfileEditViewModel(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    private val updatedUserLiveData = MutableLiveData<User>()
+    private val _updatedUserLiveData = MutableLiveData<User>()
 
-    fun getUpdatedUserLiveData(): LiveData<User> = updatedUserLiveData
+    val updatedUserLiveData: LiveData<User> = _updatedUserLiveData
 
     fun onUserValidated(user: User) {
         viewModelScope.launch {
             val updatedUserResult: Result<User> = userRepository.updateUser(user)
 
             when (updatedUserResult) {
-                is Result.Success -> updatedUserLiveData.value = updatedUserResult.result
+                is Result.Success -> _updatedUserLiveData.value = updatedUserResult.result
                 is Result.Error -> Unit
             }
         }

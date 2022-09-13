@@ -14,23 +14,23 @@ class ProfileViewModel(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    private val profileNavigationLiveData = MutableLiveData<Event<ProfileNavigation>>()
-    private val userLiveData = MutableLiveData<User>()
+    private val _profileNavigationLiveData = MutableLiveData<Event<ProfileNavigation>>()
+    private val _userLiveData = MutableLiveData<User>()
+
+    val profileNavigationLiveData: LiveData<Event<ProfileNavigation>> = _profileNavigationLiveData
+    val userLiveData: LiveData<User> = _userLiveData
 
     init {
         loadUser()
     }
 
-    fun getProfileNavigationLiveData(): LiveData<Event<ProfileNavigation>> = profileNavigationLiveData
-    fun getUserLiveData(): LiveData<User> = userLiveData
-
     fun onUserUpdated(updatedUser: User) {
-        userLiveData.value = updatedUser
+        _userLiveData.value = updatedUser
     }
 
     fun onProfileEditButtonClicked() {
-        val user: User = userLiveData.value ?: return
-        profileNavigationLiveData.value = Event(ProfileNavigation.OpenProfileEdit(user))
+        val user: User = _userLiveData.value ?: return
+        _profileNavigationLiveData.value = Event(ProfileNavigation.OpenProfileEdit(user))
     }
 
     private fun loadUser() {
@@ -38,7 +38,7 @@ class ProfileViewModel(
             val userResult: Result<User> = userRepository.getUser()
 
             when (userResult) {
-                is Result.Success -> userLiveData.value = userResult.result
+                is Result.Success -> _userLiveData.value = userResult.result
                 is Result.Error -> Unit
             }
         }

@@ -19,21 +19,21 @@ class DevicesViewModel(
     private val deviceRepository: DeviceRepository
 ) : ViewModel() {
 
-    private val navigationLiveData = MutableLiveData<Event<DevicesNavigation>>()
-    private val devicesLiveData = MutableLiveData<List<Device>>()
+    private val _navigationLiveData = MutableLiveData<Event<DevicesNavigation>>()
+    private val _devicesLiveData = MutableLiveData<List<Device>>()
+
+    val navigationLiveData: LiveData<Event<DevicesNavigation>> = _navigationLiveData
+    val devicesLiveData: LiveData<List<Device>> = _devicesLiveData
 
     init {
         loadDevices()
     }
 
-    fun getDevicesLiveData(): LiveData<List<Device>> = devicesLiveData
-    fun getNavigationLiveData(): LiveData<Event<DevicesNavigation>> = navigationLiveData
-
     fun onDeviceClicked(device: Device) {
         when (device) {
-            is Light -> navigationLiveData.value = Event(DevicesNavigation.OpenLightSteering(device))
-            is Heater -> navigationLiveData.value = Event(DevicesNavigation.OpenHeaterSteering(device))
-            is RollerShutter -> navigationLiveData.value = Event(DevicesNavigation.OpenRollerShutterSteering(device))
+            is Light -> _navigationLiveData.value = Event(DevicesNavigation.OpenLightSteering(device))
+            is Heater -> _navigationLiveData.value = Event(DevicesNavigation.OpenHeaterSteering(device))
+            is RollerShutter -> _navigationLiveData.value = Event(DevicesNavigation.OpenRollerShutterSteering(device))
         }
     }
 
@@ -49,7 +49,7 @@ class DevicesViewModel(
     }
 
     fun onFilterClicked() {
-        navigationLiveData.value = Event(DevicesNavigation.OpenFilters)
+        _navigationLiveData.value = Event(DevicesNavigation.OpenFilters)
     }
 
     fun onFiltersApplied() {
@@ -57,12 +57,12 @@ class DevicesViewModel(
     }
 
     fun onDeviceUpdated(updatedDevice: Device) {
-        val currentDevices: MutableList<Device> = devicesLiveData.value?.toMutableList() ?: return
+        val currentDevices: MutableList<Device> = _devicesLiveData.value?.toMutableList() ?: return
         val updatedDeviceIndex: Int = currentDevices.indexOfFirst { it.id == updatedDevice.id }
 
         if (updatedDeviceIndex != -1) {
             currentDevices[updatedDeviceIndex] = updatedDevice
-            devicesLiveData.value = currentDevices
+            _devicesLiveData.value = currentDevices
         }
     }
 
@@ -71,17 +71,17 @@ class DevicesViewModel(
             val devicesResult: Result<List<Device>> = getFilteredDevicesUseCase.execute()
 
             when (devicesResult) {
-                is Result.Success -> devicesLiveData.value = devicesResult.result
+                is Result.Success -> _devicesLiveData.value = devicesResult.result
                 is Result.Error -> Unit
             }
         }
     }
 
     private fun handleRemoveDeviceSuccess(device: Device) {
-        val currentDevices: List<Device> = devicesLiveData.value ?: return
+        val currentDevices: List<Device> = _devicesLiveData.value ?: return
         val devicesCopy = ArrayList(currentDevices)
 
         devicesCopy.remove(device)
-        devicesLiveData.value = devicesCopy
+        _devicesLiveData.value = devicesCopy
     }
 }

@@ -18,9 +18,9 @@ class DeviceSteeringViewModel(
     private val device: Device
 ) : ViewModel() {
 
-    private val updatedDeviceLiveData = MutableLiveData<Device>()
+    private val _updatedDeviceLiveData = MutableLiveData<Device>()
 
-    fun getUpdatedDeviceLiveData(): LiveData<Device> = updatedDeviceLiveData
+    val updatedDeviceLiveData: LiveData<Device> = _updatedDeviceLiveData
 
     fun onUpdateLightClicked(
         isDeviceOn: Boolean,
@@ -58,7 +58,7 @@ class DeviceSteeringViewModel(
             val updateDeviceResult: Result<Device> = deviceRepository.updateDevice(device)
 
             when (updateDeviceResult) {
-                is Result.Success -> updatedDeviceLiveData.value = updateDeviceResult.result
+                is Result.Success -> _updatedDeviceLiveData.value = updateDeviceResult.result
                 is Result.Error -> Unit
             }
         }

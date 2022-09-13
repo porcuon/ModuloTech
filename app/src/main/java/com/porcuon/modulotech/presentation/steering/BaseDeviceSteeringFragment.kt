@@ -30,7 +30,7 @@ abstract class BaseDeviceSteeringFragment<V : ViewBinding, D : Device>(
 
     private fun observeViewModels() {
         with(deviceSteeringViewModel) {
-            getUpdatedDeviceLiveData().observe(viewLifecycleOwner, ::onUpdatedDeviceReceived)
+            updatedDeviceLiveData.observe(viewLifecycleOwner, ::onUpdatedDeviceReceived)
         }
     }
 

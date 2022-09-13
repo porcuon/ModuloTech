@@ -10,20 +10,20 @@ class DeviceFiltersViewModel(
     private val deviceFilterRepository: DeviceFilterRepository
 ) : ViewModel() {
 
-    private val deviceFiltersLiveData = MutableLiveData<List<DeviceFilter>>()
+    private val _deviceFiltersLiveData = MutableLiveData<List<DeviceFilter>>()
+
+    val deviceFiltersLiveData: LiveData<List<DeviceFilter>> = _deviceFiltersLiveData
 
     init {
-        deviceFiltersLiveData.value = deviceFilterRepository.getDeviceFilters()
+        _deviceFiltersLiveData.value = deviceFilterRepository.getDeviceFilters()
     }
-
-    fun getDeviceFiltersLiveData(): LiveData<List<DeviceFilter>> = deviceFiltersLiveData
 
     fun onDeviceFilterClicked(deviceFilter: DeviceFilter) {
         deviceFilter.isSelected = !deviceFilter.isSelected
     }
 
     fun onDestroy() {
-        val deviceFilters: List<DeviceFilter> = deviceFiltersLiveData.value ?: return
+        val deviceFilters: List<DeviceFilter> = _deviceFiltersLiveData.value ?: return
         deviceFilterRepository.updateDeviceFilters(deviceFilters)
     }
 }

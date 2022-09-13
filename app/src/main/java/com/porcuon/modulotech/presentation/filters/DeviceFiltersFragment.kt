@@ -33,9 +33,8 @@ class DeviceFiltersFragment : BaseBottomSheetFragment<FragmentDeviceFiltersBindi
     }
 
     private fun observeViewModel() {
-        deviceFiltersViewModel.getDeviceFiltersLiveData().observe(
-            viewLifecycleOwner,
-            deviceFilterAdapter::submitList
-        )
+        with(deviceFiltersViewModel) {
+            deviceFiltersLiveData.observe(viewLifecycleOwner, deviceFilterAdapter::submitList)
+        }
     }
 }

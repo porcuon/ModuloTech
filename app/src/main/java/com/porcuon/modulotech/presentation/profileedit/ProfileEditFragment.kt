@@ -64,7 +64,7 @@ class ProfileEditFragment : BaseFragment<FragmentProfileEditBinding>(FragmentPro
 
     private fun observeViewModels() {
         with(profileEditViewModel) {
-            getUpdatedUserLiveData().observe(viewLifecycleOwner, ::onUserUpdated)
+            updatedUserLiveData.observe(viewLifecycleOwner, ::onUserUpdated)
         }
     }
 

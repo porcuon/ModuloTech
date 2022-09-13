@@ -36,8 +36,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     private fun observeViewModel() {
         with(viewModel) {
-            getUserLiveData().observe(viewLifecycleOwner, ::handleUser)
-            getProfileNavigationLiveData().observeEvent(viewLifecycleOwner, ::handleNavigation)
+            userLiveData.observe(viewLifecycleOwner, ::handleUser)
+            profileNavigationLiveData.observeEvent(viewLifecycleOwner, ::handleNavigation)
         }
     }
 
