@@ -26,9 +26,9 @@ class DeviceFilterViewHolder(
     private fun getDeviceFilterText(deviceType: DeviceType): String {
         @StringRes
         val stringResId: Int = when (deviceType) {
-            DeviceType.Light -> R.string.item_device_light
-            DeviceType.Heater -> R.string.item_device_heater
-            DeviceType.RollerShutter -> R.string.item_device_roller_shutter
+            DeviceType.Light -> R.string.item_device_filter_light
+            DeviceType.Heater -> R.string.item_device_filter_heater
+            DeviceType.RollerShutter -> R.string.item_device_filter_roller_shutter
         }
 
         return binding.root.resources.getString(stringResId)

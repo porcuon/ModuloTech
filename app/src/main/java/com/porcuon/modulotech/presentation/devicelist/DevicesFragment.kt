@@ -3,6 +3,8 @@ package com.porcuon.modulotech.presentation.devicelist
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.porcuon.modulotech.presentation.core.BaseFragment
 import com.porcuon.modulotech.R
 import com.porcuon.modulotech.databinding.FragmentDevicesBinding
@@ -30,6 +32,7 @@ class DevicesFragment : BaseFragment<FragmentDevicesBinding>(FragmentDevicesBind
 
     private fun setupViews() {
         binding?.recyclerView?.adapter = deviceListAdapter
+        binding?.recyclerView?.addItemDecoration(DividerItemDecoration(requireContext(), VERTICAL))
         binding?.toolbar?.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_filter -> viewModel.onFilterClicked()

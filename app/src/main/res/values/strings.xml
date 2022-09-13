@@ -46,10 +46,29 @@
     <string name="fragment_profile_edit_error_date_format">The field must be in %1s format</string>
     <!--endregion -->
 
-    <!--region item_device-->
-    <string name="item_device_light">Light</string>
-    <string name="item_device_heater">Heater</string>
-    <string name="item_device_roller_shutter">Roller Shutter</string>
+    <!--region item_device_filter-->
+    <string name="item_device_filter_light">Light</string>
+    <string name="item_device_filter_heater">Heater</string>
+    <string name="item_device_filter_roller_shutter">Roller Shutter</string>
+    <!--endregion -->
+
+    <!--region item_light-->
+    <string name="item_light_name">Light</string>
+    <string name="item_light_intensity">Intensity</string>
+    <string name="item_light_mode_on">On</string>
+    <string name="item_light_mode_off">Off</string>
+    <!--endregion -->
+
+    <!--region item_heater-->
+    <string name="item_heater_name">Heater</string>
+    <string name="item_heater_temperature">Temperature</string>
+    <string name="item_heater_mode_on">On</string>
+    <string name="item_heater_mode_off">Off</string>
+    <!--endregion -->
+
+    <!--region item_roller_shutter-->
+    <string name="item_roller_shutter_name">Roller Shutter</string>
+    <string name="item_roller_shutter_position">Position</string>
     <!--endregion -->
 
     <!--region layout_server_error-->

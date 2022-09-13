@@ -46,10 +46,29 @@
     <string name="fragment_profile_edit_error_date_format">Le champ doit être au format %1s</string>
     <!--endregion -->
 
-    <!--region item_device-->
-    <string name="item_device_light">Lumière</string>
-    <string name="item_device_heater">Chauffage</string>
-    <string name="item_device_roller_shutter">Volet roulant</string>
+    <!--region item_device_filter-->
+    <string name="item_device_filter_light">Lumière</string>
+    <string name="item_device_filter_heater">Chauffage</string>
+    <string name="item_device_filter_roller_shutter">Volet roulant</string>
+    <!--endregion -->
+
+    <!--region item_light-->
+    <string name="item_light_name">Lumière</string>
+    <string name="item_light_intensity">Intensité</string>
+    <string name="item_light_mode_on">On</string>
+    <string name="item_light_mode_off">Off</string>
+    <!--endregion -->
+
+    <!--region item_heater-->
+    <string name="item_heater_name">Chauffage</string>
+    <string name="item_heater_temperature">Température</string>
+    <string name="item_heater_mode_on">On</string>
+    <string name="item_heater_mode_off">Off</string>
+    <!--endregion -->
+
+    <!--region item_roller_shutter-->
+    <string name="item_roller_shutter_name">Volet roulant</string>
+    <string name="item_roller_shutter_position">Position</string>
     <!--endregion -->
 
     <!--region layout_server_error-->

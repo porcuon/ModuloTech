@@ -9,7 +9,7 @@
     android:paddingVertical="@dimen/padding_12dp">
 
     <TextView
-        android:id="@+id/device_name_text_view"
+        android:id="@+id/light_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_8dp"
@@ -26,9 +26,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_4dp"
+        android:text="@string/item_light_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_name_text_view"
-        tools:text="Light" />
+        app:layout_constraintTop_toBottomOf="@id/light_name_text_view" />
+
+    <TextView
+        android:id="@+id/intensity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:text="@string/item_light_intensity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_type_text_view" />
+
+    <TextView
+        android:id="@+id/intensity_value_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_4dp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/intensity_text_view"
+        app:layout_constraintTop_toTopOf="@id/intensity_text_view"
+        tools:text="82" />
+
+    <TextView
+        android:id="@+id/light_mode_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_type_text_view"
+        tools:text="ON"
+        tools:textColor="@android:color/holo_green_dark" />
 
     <ImageView
         android:id="@+id/remove_device_image_view"
