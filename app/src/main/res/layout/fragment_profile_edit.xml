@@ -39,6 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fragment_profile_edit_first_name"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,6 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fragment_profile_edit_last_name"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,6 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fragment_profile_edit_country"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,6 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fragment_profile_edit_city"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,6 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fragment_profile_edit_street"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,6 +135,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fragment_profile_edit_street_code"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
