@@ -20,11 +20,16 @@ class RollerShutterSteeringFragment :
 
     private fun setupViews() {
         binding?.rollerShutterNameTextView?.text = device.name
+        binding?.positionValueTextView?.text = device.position.toString()
 
         binding?.positionSlider?.apply {
             value = device.position.toFloat()
             valueFrom = RollerShutter.MIN_POSITION.toFloat()
             valueTo = RollerShutter.MAX_POSITION.toFloat()
+
+            addOnChangeListener { _, value, _ ->
+                binding?.positionValueTextView?.text = value.toInt().toString()
+            }
         }
 
         binding?.saveButton?.setOnClickListener {

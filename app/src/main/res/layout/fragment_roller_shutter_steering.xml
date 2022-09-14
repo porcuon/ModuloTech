@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:paddingHorizontal="@dimen/padding_16dp"
     android:paddingVertical="@dimen/padding_12dp">
 
@@ -23,20 +23,28 @@
         android:id="@+id/position_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:text="@string/fragment_roller_shutter_position"
-        app:layout_constraintBottom_toBottomOf="@id/position_slider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/position_slider" />
+        app:layout_constraintTop_toBottomOf="@id/roller_shutter_name_text_view" />
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/position_slider"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/position_value_text_view"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_16dp"
-        android:stepSize="1"
-        android:layout_marginTop="@dimen/margin_16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/position_text_view"
+        app:layout_constraintTop_toTopOf="@id/position_text_view"
+        tools:text="66" />
+
+    <com.porcuon.modulotech.presentation.utils.VerticalSlider
+        android:id="@+id/position_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/roller_shutter_name_text_view"
         app:tickVisible="false" />
 
@@ -44,9 +52,9 @@
         android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:text="@string/fragment_roller_shutter_save"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:backgroundTint="?attr/colorPrimary"
+        android:text="@string/fragment_roller_shutter_save"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
