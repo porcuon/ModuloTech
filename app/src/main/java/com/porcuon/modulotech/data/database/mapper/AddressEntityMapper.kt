@@ -1,15 +1,13 @@
-package com.porcuon.modulotech.data.mapper
+package com.porcuon.modulotech.data.database.mapper
 
-import com.porcuon.modulotech.data.entity.AddressEntity
+import com.porcuon.modulotech.data.database.entity.AddressEntity
 import com.porcuon.modulotech.domain.model.Address
 
-const val NO_POSTAL_CODE = -1
-
-class AddressMapper {
+class AddressEntityMapper {
 
     fun map(addressEntity: AddressEntity?) = Address(
         city = addressEntity?.city.orEmpty(),
-        postalCode = addressEntity?.postalCode ?: NO_POSTAL_CODE,
+        postalCode = addressEntity?.postalCode ?: -1,
         street = addressEntity?.street.orEmpty(),
         streetCode = addressEntity?.streetCode.orEmpty(),
         country = addressEntity?.country.orEmpty()

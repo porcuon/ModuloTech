@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.porcuon.modulotech.data.entity.UserEntity
+import com.porcuon.modulotech.data.database.entity.UserEntity
 
 @Dao
 interface UserDao {

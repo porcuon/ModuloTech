@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.porcuon.modulotech.data.entity.DeviceEntity
+import com.porcuon.modulotech.data.database.entity.DeviceEntity
 import com.porcuon.modulotech.domain.model.DeviceType
 
 @Dao

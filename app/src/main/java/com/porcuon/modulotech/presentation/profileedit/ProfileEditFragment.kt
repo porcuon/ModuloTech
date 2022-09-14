@@ -6,7 +6,6 @@ import androidx.core.view.children
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.porcuon.modulotech.R
-import com.porcuon.modulotech.data.mapper.NO_POSTAL_CODE
 import com.porcuon.modulotech.presentation.core.BaseFragment
 import com.porcuon.modulotech.databinding.FragmentProfileEditBinding
 import com.porcuon.modulotech.domain.model.Address
@@ -118,7 +117,7 @@ class ProfileEditFragment : BaseFragment<FragmentProfileEditBinding>(FragmentPro
         )
         val updatedAddress = Address(
             city = binding?.cityEditText?.text.toStringOrEmpty(),
-            postalCode = binding?.postalCodeEditText?.text.toString().toIntOrNull() ?: NO_POSTAL_CODE,
+            postalCode = binding?.postalCodeEditText?.text.toString().toIntOrNull() ?: -1,
             street = binding?.streetEditText?.text.toStringOrEmpty(),
             streetCode = binding?.streetCodeEditText?.text.toStringOrEmpty(),
             country = binding?.countryEditText?.text.toStringOrEmpty()

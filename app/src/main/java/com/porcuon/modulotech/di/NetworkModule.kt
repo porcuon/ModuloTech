@@ -1,6 +1,11 @@
 package com.porcuon.modulotech.di
 
 import com.porcuon.modulotech.BuildConfig
+import com.porcuon.modulotech.data.network.mapper.ApiAddressMapper
+import com.porcuon.modulotech.data.network.mapper.ApiDeviceMapper
+import com.porcuon.modulotech.data.network.mapper.ApiUserDevicesMapper
+import com.porcuon.modulotech.data.network.mapper.ApiUserMapper
+import com.porcuon.modulotech.data.network.source.UserDevicesNetworkSource
 import okhttp3.OkHttpClient
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -27,5 +32,32 @@ val networkModule: Module = module {
             .client(okHttpClient)
             .addConverterFactory(JacksonConverterFactory.create())
             .build()
+    }
+
+    single {
+        val retrofit: Retrofit = get()
+
+        retrofit.create(UserDevicesNetworkSource::class.java)
+    }
+
+    factory {
+        ApiAddressMapper()
+    }
+
+    factory {
+        ApiUserMapper(
+            apiAddressMapper = get()
+        )
+    }
+
+    factory {
+        ApiDeviceMapper()
+    }
+
+    factory {
+        ApiUserDevicesMapper(
+            apiDeviceMapper = get(),
+            apiUserMapper = get()
+        )
     }
 }

@@ -1,6 +1,6 @@
-package com.porcuon.modulotech.data.mapper
+package com.porcuon.modulotech.data.database.mapper
 
-import com.porcuon.modulotech.data.entity.DeviceEntity
+import com.porcuon.modulotech.data.database.entity.DeviceEntity
 import com.porcuon.modulotech.domain.model.Device
 import com.porcuon.modulotech.domain.model.DeviceMode
 import com.porcuon.modulotech.domain.model.DeviceType
@@ -8,15 +8,27 @@ import com.porcuon.modulotech.domain.model.Heater
 import com.porcuon.modulotech.domain.model.Light
 import com.porcuon.modulotech.domain.model.RollerShutter
 
-private const val NO_ID = -1L
-
-class DeviceMapper {
+class DeviceEntityMapper {
 
     fun map(deviceEntity: DeviceEntity): Device? {
         return when (deviceEntity.type) {
-            DeviceType.Light -> createLight(deviceEntity)
-            DeviceType.Heater -> createHeater(deviceEntity)
-            DeviceType.RollerShutter -> createRollerShutter(deviceEntity)
+            DeviceType.Light -> Light(
+                id = deviceEntity.id ?: -1,
+                name = deviceEntity.name.orEmpty(),
+                intensity = deviceEntity.intensity ?: Light.MIN_INTENSITY,
+                deviceMode = deviceEntity.mode ?: DeviceMode.OFF
+            )
+            DeviceType.Heater -> Heater(
+                id = deviceEntity.id ?: -1,
+                name = deviceEntity.name.orEmpty(),
+                temperature = deviceEntity.temperature ?: Heater.MIN_TEMPERATURE,
+                deviceMode = deviceEntity.mode ?: DeviceMode.OFF
+            )
+            DeviceType.RollerShutter -> RollerShutter(
+                id = deviceEntity.id ?: -1,
+                name = deviceEntity.name.orEmpty(),
+                position = deviceEntity.position ?: RollerShutter.MIN_POSITION
+            )
             else -> null
         }
     }
@@ -45,24 +57,4 @@ class DeviceMapper {
             )
         }
     }
-
-    private fun createLight(deviceEntity: DeviceEntity): Device = Light(
-        id = deviceEntity.id ?: NO_ID,
-        name = deviceEntity.name.orEmpty(),
-        intensity = deviceEntity.intensity ?: Light.MIN_INTENSITY,
-        deviceMode = deviceEntity.mode ?: DeviceMode.OFF
-    )
-
-    private fun createHeater(deviceEntity: DeviceEntity): Device = Heater(
-        id = deviceEntity.id ?: NO_ID,
-        name = deviceEntity.name.orEmpty(),
-        temperature = deviceEntity.temperature ?: Heater.MIN_TEMPERATURE,
-        deviceMode = deviceEntity.mode ?: DeviceMode.OFF
-    )
-
-    private fun createRollerShutter(deviceEntity: DeviceEntity): Device = RollerShutter(
-        id = deviceEntity.id ?: NO_ID,
-        name = deviceEntity.name.orEmpty(),
-        position = deviceEntity.position ?: RollerShutter.MIN_POSITION
-    )
 }

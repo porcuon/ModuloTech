@@ -1,10 +1,10 @@
-package com.porcuon.modulotech.data.entity
+package com.porcuon.modulotech.data.network.api
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-data class AddressEntity(
+data class ApiAddress(
     @JsonProperty("city")
     val city: String?,
     @JsonProperty("postalCode")

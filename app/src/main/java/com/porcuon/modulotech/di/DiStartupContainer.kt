@@ -15,10 +15,8 @@ fun initKoin(context: Context) {
 private fun getModules(): List<Module> = listOf(
     networkModule,
     databaseModule,
-    homeModule,
-    devicesModule,
-    profileModule,
-    deviceFiltersModule,
-    deviceSteeringModule,
-    profileEditModule
+    preferencesModule,
+    repositoryModule,
+    useCaseModule,
+    presentationModule
 )
