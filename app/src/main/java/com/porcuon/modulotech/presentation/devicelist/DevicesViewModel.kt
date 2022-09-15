@@ -1,5 +1,6 @@
 package com.porcuon.modulotech.presentation.devicelist
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -70,6 +71,7 @@ class DevicesViewModel(
         viewModelScope.launch {
             val devicesResult: Result<List<Device>> = getFilteredDevicesUseCase.execute()
 
+            @SuppressLint("NullSafeMutableLiveData")
             when (devicesResult) {
                 is Result.Success -> _devicesLiveData.value = devicesResult.result
                 is Result.Error -> Unit

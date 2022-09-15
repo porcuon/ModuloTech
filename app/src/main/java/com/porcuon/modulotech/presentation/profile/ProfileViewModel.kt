@@ -1,5 +1,6 @@
 package com.porcuon.modulotech.presentation.profile
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -37,6 +38,7 @@ class ProfileViewModel(
         viewModelScope.launch {
             val userResult: Result<User> = userRepository.getUser()
 
+            @SuppressLint("NullSafeMutableLiveData")
             when (userResult) {
                 is Result.Success -> _userLiveData.value = userResult.result
                 is Result.Error -> Unit

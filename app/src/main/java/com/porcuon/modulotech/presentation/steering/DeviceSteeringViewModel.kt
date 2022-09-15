@@ -1,5 +1,6 @@
 package com.porcuon.modulotech.presentation.steering
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -57,6 +58,7 @@ class DeviceSteeringViewModel(
         viewModelScope.launch {
             val updateDeviceResult: Result<Device> = deviceRepository.updateDevice(device)
 
+            @SuppressLint("NullSafeMutableLiveData")
             when (updateDeviceResult) {
                 is Result.Success -> _updatedDeviceLiveData.value = updateDeviceResult.result
                 is Result.Error -> Unit
